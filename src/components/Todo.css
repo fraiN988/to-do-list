@@ -1,0 +1,37 @@
+/* Todo.css */
+.todo-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.todo-item.completed {
+  background-color: #e6ffe6;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ff6666;
+}
+.todo-when {
+  margin-left: 10px;
+  color: #888; /* Example color - adjust as needed */
+  font-style: italic;
+}
+ul {
+  list-style-type: none; /* This removes the bullet points */
+  padding: 0; /* This removes the padding on the left side */
+  margin: 0; /* Adjust margin as needed */
+}

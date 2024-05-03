@@ -1,4 +1,3 @@
-// TodoItem.tsx
 import React from "react";
 import { Todo } from "./types";
 
@@ -25,10 +24,9 @@ const TodoItem: React.FC<TodoItemProps> = ({
     <div className={`todo-item ${todo.completed ? "completed" : ""}`}>
       <input type="checkbox" checked={todo.completed} onChange={handleToggle} />
       <span className="todo-text">{todo.text}</span>
-      <span className="todo-when">{todo.when}</span>{" "}
-      {/* Display the 'when' field */}
+      <span className="todo-when">{todo.when}</span> {}
       <button className="delete-button" onClick={() => onDelete(todo.id)}>
-        ✕ {/* This is the "x" character */}
+        ✕ {}
       </button>
     </div>
   );

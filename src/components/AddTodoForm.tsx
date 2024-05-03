@@ -1,21 +1,20 @@
-// AddTodoForm.tsx
 import React, { useState } from "react";
 import { firestore } from "../firebaseConfig";
 import "./AddTodoForm.css";
 
 const AddTodoForm: React.FC = () => {
   const [todoText, setTodoText] = useState<string>("");
-  const [todoWhen, setTodoWhen] = useState<string>(""); // New state for the 'when' field
+  const [todoWhen, setTodoWhen] = useState<string>("");
 
   const handleAddTodo = async () => {
     try {
       await firestore.collection("todos").add({
         text: todoText,
         completed: false,
-        when: todoWhen, // Include the 'when' field
+        when: todoWhen,
       });
       setTodoText("");
-      setTodoWhen(""); // Reset the 'when' field
+      setTodoWhen("");
       console.log("To-do added successfully.");
     } catch (error) {
       console.error("Error adding to-do: ", error);
@@ -36,7 +35,7 @@ const AddTodoForm: React.FC = () => {
         value={todoWhen}
         onChange={(e) => setTodoWhen(e.target.value)}
         placeholder="When..."
-        className="todo-input" // You can use the same styling or create a new one for this input
+        className="todo-input"
       />
       <button onClick={handleAddTodo} className="add-button">
         Add To-do
